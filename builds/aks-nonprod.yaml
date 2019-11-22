@@ -44,6 +44,7 @@ jobs:
       inlineScript: |
         az aks get-credentials --resource-group $(aksResourceGroup) --name $(aksClusterName) --overwrite
         kubectl apply -f manifests/all/namespaces.yaml
+        helm init --client-only
 
 
   - task: DownloadSecureFile@1
